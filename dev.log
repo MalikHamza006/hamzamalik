@@ -1,0 +1,232 @@
+npm notice run porpor@0.1.0 dev
+npm notice run next dev
+▲ Next.js 16.3.8 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.18.214:3000
+✓ Ready in 2.5s
+✓ Running next.config.ts took 147ms
+
+○ Compiling / ...
+ GET / 200 in 17.4s (next.js: 14.0s, application-code: 3.4s)
+ GET / 200 in 1270ms (next.js: 46ms, application-code: 1224ms)
+ GET / 200 in 1389ms (next.js: 20ms, application-code: 1370ms)
+○ Compiling /api/assistant ...
+ POST /api/assistant 200 in 5.5s (next.js: 5.1s, application-code: 338ms)
+ POST /api/assistant 200 in 91ms (next.js: 34ms, application-code: 57ms)
+ HEAD / 200 in 582ms (next.js: 30ms, application-code: 553ms)
+ GET / 200 in 520ms (next.js: 11ms, application-code: 509ms)
+ GET / 200 in 1020ms (next.js: 14ms, application-code: 1007ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="geist_deef...">
+                          <body
++                           className="min-h-full bg-ink-950 text-white"
+-                           className="min-h-full bg-ink-950 text-white antigravity-scroll-lock"
+                          >
+                  ...
+ 
+✓ Compiled in 1133ms
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+ GET / 200 in 1965ms (next.js: 96ms, application-code: 1869ms)
+✓ Compiled in 2.5s
+ GET / 200 in 3.4s (next.js: 193ms, application-code: 3.2s)
+✓ Compiled in 1615ms
+ GET / 200 in 2.1s (next.js: 173ms, application-code: 1886ms)
+✓ Compiled in 1096ms
+ GET / 200 in 1818ms (next.js: 97ms, application-code: 1721ms)
+ GET / 200 in 1553ms (next.js: 102ms, application-code: 1452ms)
+ GET / 200 in 621ms (next.js: 31ms, application-code: 590ms)
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 1006ms (next.js: 46ms, application-code: 960ms)
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 770ms (next.js: 33ms, application-code: 736ms)
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 982ms (next.js: 35ms, application-code: 947ms)
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 916ms (next.js: 36ms, application-code: 880ms)
+✓ Compiled in 275ms
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 1325ms (next.js: 76ms, application-code: 1249ms)
+✓ Compiled in 254ms
+(node:1604) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 drain listeners added to [Gzip]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+ GET / 200 in 669ms (next.js: 37ms, application-code: 633ms)
+ GET / 200 in 1059ms (next.js: 81ms, application-code: 979ms)
+ GET / 200 in 1438ms (next.js: 86ms, application-code: 1351ms)
+ GET / 200 in 7.2s (next.js: 68ms, application-code: 7.2s)
+ POST /api/assistant 200 in 153ms (next.js: 36ms, application-code: 117ms)
+ GET / 200 in 833ms (next.js: 34ms, application-code: 800ms)
+✓ Compiled in 1470ms
+ GET / 200 in 4.1s (next.js: 192ms, application-code: 3.9s)
+ GET / 200 in 1036ms (next.js: 32ms, application-code: 1005ms)
+✓ Compiled in 1506ms
+ GET / 200 in 6.0s (next.js: 283ms, application-code: 5.7s)
+ GET / 200 in 3.2s (next.js: 807ms, application-code: 2.4s)
+○ Compiling /_not-found/page ...
+ GET /src/main.tsx 404 in 6.9s (next.js: 5.5s, application-code: 1336ms)
+ GET /@vite/client 404 in 6.8s (next.js: 6.0s, application-code: 884ms)
+✓ Compiled in 4.1s
+ GET / 200 in 1417ms (next.js: 180ms, application-code: 1236ms)
+✓ Compiled in 856ms
+ GET / 200 in 1229ms (next.js: 118ms, application-code: 1111ms)
+✓ Compiled in 1601ms
+ GET / 200 in 4.7s (next.js: 77ms, application-code: 4.6s)
+✓ Compiled in 3.2s
+ GET / 200 in 2.3s (next.js: 226ms, application-code: 2.1s)
+✓ Compiled in 1937ms
+ GET / 200 in 1676ms (next.js: 112ms, application-code: 1564ms)
+✓ Compiled in 1744ms
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 2.8s (next.js: 2.1s, application-code: 714ms)
+ GET / 200 in 7.0s (next.js: 2.9s, application-code: 4.2s)
+ GET / 200 in 3.4s (next.js: 58ms, application-code: 3.4s)
+✓ Compiled in 2.5s
+ GET / 200 in 1596ms (next.js: 235ms, application-code: 1360ms)
+[browser] Image with src "/hamza.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+✓ Compiled in 1323ms
+ GET / 200 in 1790ms (next.js: 73ms, application-code: 1717ms)
+✓ Compiled in 1943ms
+ GET / 200 in 6.6s (next.js: 57ms, application-code: 6.6s)
+✓ Compiled in 4.6s
+ GET / 200 in 6.9s (next.js: 479ms, application-code: 6.4s)
+✓ Compiled in 1278ms
+ GET / 200 in 3.7s (next.js: 977ms, application-code: 2.8s)
+ GET / 200 in 1835ms (next.js: 124ms, application-code: 1711ms)
+✓ Compiled in 1541ms
+ GET / 200 in 3.3s (next.js: 98ms, application-code: 3.2s)
+✓ Compiled in 1132ms
+✓ Compiled in 649ms
+ GET / 200 in 652ms (next.js: 42ms, application-code: 610ms)
+ GET / 200 in 1809ms (next.js: 70ms, application-code: 1739ms)
+✓ Compiled in 925ms
+ GET / 200 in 1493ms (next.js: 69ms, application-code: 1424ms)
+ GET / 200 in 5.4s (next.js: 984ms, application-code: 4.4s)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="geist_deef...">
+                          <body
++                           className="min-h-full bg-ink-950 text-white"
+-                           className="min-h-full bg-ink-950 text-white antigravity-scroll-lock"
+                          >
+                  ...
+ 
+[browser] Image with src "/hamza.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+✓ Compiled in 1068ms
+ GET / 200 in 1955ms (next.js: 69ms, application-code: 1886ms)
+ GET / 200 in 3.0s (next.js: 98ms, application-code: 2.9s)
+ GET / 200 in 1179ms (next.js: 34ms, application-code: 1146ms)
+ GET / 200 in 1571ms (next.js: 18ms, application-code: 1554ms)
+✓ Compiled in 748ms
+ GET / 200 in 359ms (next.js: 25ms, application-code: 334ms)
+✓ Compiled in 257ms
+ GET / 200 in 547ms (next.js: 26ms, application-code: 520ms)
+✓ Compiled in 400ms
+ GET / 200 in 1906ms (next.js: 48ms, application-code: 1858ms)
+✓ Compiled in 266ms
+ GET / 200 in 478ms (next.js: 19ms, application-code: 459ms)
+✓ Compiled in 167ms
+ GET / 200 in 763ms (next.js: 25ms, application-code: 739ms)
+✓ Compiled in 1349ms
+ GET / 200 in 1215ms (next.js: 56ms, application-code: 1159ms)
+ GET / 200 in 1480ms (next.js: 53ms, application-code: 1427ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="geist_deef...">
+                          <body
++                           className="min-h-full bg-ink-950 text-white"
+-                           className="min-h-full bg-ink-950 text-white antigravity-scroll-lock"
+                          >
+                  ...
+ 
+[browser] Image with src "/hamza1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 4.3s (next.js: 601ms, application-code: 3.7s)
+ GET / 200 in 208ms (next.js: 17ms, application-code: 191ms)
+ GET / 200 in 905ms (next.js: 13ms, application-code: 893ms)
+ GET / 200 in 1996ms (next.js: 54ms, application-code: 1942ms)
+ GET / 200 in 6.6s (next.js: 1109ms, application-code: 5.5s)
+ GET / 200 in 2.7s (next.js: 204ms, application-code: 2.5s)
+ GET / 200 in 1121ms (next.js: 70ms, application-code: 1051ms)
+✓ Compiled in 314ms
+ GET / 200 in 368ms (next.js: 26ms, application-code: 342ms)
+ GET / 200 in 1924ms (next.js: 75ms, application-code: 1850ms)
