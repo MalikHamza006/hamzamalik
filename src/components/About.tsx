@@ -12,7 +12,7 @@ const profileStats = [
 
 export default function About() {
   return (
-    <section id="about" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="about" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
@@ -25,10 +25,10 @@ export default function About() {
       <div className="shell">
         <div className="grid grid-cols-1 items-stretch gap-12 lg:grid-cols-12 lg:gap-14">
           {/* Left Column: Direct Clean Editorial Portrait (No Border Box, Extended Length Matching Text) */}
-          <div className="flex flex-col justify-end lg:col-span-5">
+          <div className="order-2 flex flex-col justify-end lg:order-1 lg:col-span-5">
             <Reveal variant="up" className="h-full">
-              <div className="relative mx-auto flex h-full min-h-[520px] w-full max-w-[460px] flex-col justify-end sm:min-h-[600px] lg:min-h-[680px] xl:max-w-[480px] xl:min-h-[720px]">
-                <div className="relative h-full min-h-[520px] w-full overflow-hidden sm:min-h-[600px] lg:min-h-[680px] xl:min-h-[720px]">
+              <div className="relative mx-auto flex h-full min-h-[300px] w-full max-w-[340px] flex-col justify-end sm:min-h-[520px] sm:max-w-[460px] lg:min-h-[680px] xl:max-w-[480px] xl:min-h-[720px]">
+                <div className="relative h-full min-h-[300px] w-full overflow-hidden sm:min-h-[520px] lg:min-h-[680px] xl:min-h-[720px]">
                   <Image
                     src="/hamza2.png"
                     alt={`${profile.name} — Software Engineer & AI Engineer`}
@@ -46,7 +46,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Narrative & Technical Positioning */}
-          <div className="lg:col-span-7">
+          <div className="order-1 lg:order-2 lg:col-span-7">
             <Reveal delay={100}>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-crimson-600" />
@@ -84,16 +84,16 @@ export default function About() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
                 <a
                   href="#contact"
-                  className="btn btn-primary !min-h-[46px]"
+                  className="btn btn-primary w-full sm:w-auto !min-h-[46px]"
                 >
                   Start a Conversation
                 </a>
                 <a
                   href={profile.phoneHref}
-                  className="btn btn-ghost !min-h-[46px]"
+                  className="btn btn-ghost w-full sm:w-auto !min-h-[46px]"
                 >
                   Direct Call: {profile.phone}
                 </a>

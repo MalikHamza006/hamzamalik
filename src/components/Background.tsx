@@ -2,7 +2,7 @@ export default function Background() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-ink-950"
+      className="pointer-events-none fixed inset-0 -z-10 max-w-full overflow-hidden bg-ink-950 [contain:paint]"
     >
       <div className="absolute inset-0 grid-lines fade-mask-y opacity-70" />
 

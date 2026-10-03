@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="shell py-14 lg:py-16">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand Info */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-white/12 bg-ink-850 font-mono text-[12px] font-bold text-white">
                 {profile.monogram}
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="lg:col-span-3 lg:col-start-8">
+          <div className="lg:col-span-3">
             <span className="mono-label">Navigation</span>
             <ul className="mt-5 grid gap-2.5">
               {navLinks.map((link) => (

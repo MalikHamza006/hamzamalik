@@ -191,9 +191,9 @@ function extractProjectType(text: string) {
 }
 
 const KNOWN_STACK = [
-  "React", "Next.js", "Django", "Laravel", "Node.js", "TypeScript", "JavaScript",
-  "Tailwind CSS", "Bootstrap", "HTML", "CSS", "Python", "PostgreSQL", "MySQL",
-  "Supabase", "MongoDB", "Firebase", "Shopify", "WordPress",
+  "React", "Angular", "Vue.js", "Vue", "Next.js", "Django", "Laravel", "Node.js", "TypeScript", "JavaScript",
+  "Tailwind CSS", "Bootstrap", "HTML", "CSS", "Python", "PHP", "SQL", "PostgreSQL", "MySQL",
+  "Supabase", "MongoDB", "Mongoose", "Firebase", "Shopify", "WordPress",
 ];
 
 function extractStack(text: string) {
@@ -299,43 +299,43 @@ function answerIntent(intent: Intent, language: Language): string {
     case "skills":
       return pick(
         language,
-        "His stack includes React, Next.js, TypeScript, Tailwind CSS, HTML, CSS and JavaScript on the frontend, Django, Laravel and Node.js on the backend, plus AI engineering, AI prompt engineering and AI automation.\n\nAre you looking for something specific on any of those?",
-        "Is ka stack frontend par React, Next.js, TypeScript, Tailwind CSS, HTML, CSS aur JavaScript rakhta hai, backend par Django, Laravel aur Node.js, sath hi AI engineering, AI prompt engineering aur AI automation bhi.\n\nKya aap in mein se kisi cheez ke baare mein poochhna chahte hain?",
+        "Hamza's technical stack includes:\n• Frontend: React, Angular, Vue.js, HTML5, CSS3, JavaScript ES6+\n• Backend: Node.js, Python, Django, Laravel, PHP\n• Databases & Cloud: SQL, MongoDB, Mongoose, Supabase\n• AI & Integration: AI Feature Integration, RESTful APIs, Web Services, AI-integrated web solutions.\n\nAre you looking for something specific on any of these?",
+        "Hamza ka technical stack yeh shamil karta hai:\n• Frontend: React, Angular, Vue.js, HTML5, CSS3, JavaScript ES6+\n• Backend: Node.js, Python, Django, Laravel, PHP\n• Databases & Cloud: SQL, MongoDB, Mongoose, Supabase\n• AI & Integration: AI Feature Integration, RESTful APIs, Web Services, AI-integrated web solutions.\n\nKya aap in mein se kisi specific technology ke baare mein discuss karna chahte hain?",
       );
 
     case "services":
       return pick(
         language,
-        "Hamza covers four main areas: web development (business sites, landing pages, e-commerce), web applications and dashboards, full-stack work with React or Next.js alongside Django, Laravel or Node.js, and AI development including assistants, integrations, automation and prompt engineering.\n\nWhich of those is closest to what you need?",
-        "Hamza chaar main areas cover karta hai: web development (business sites, landing pages, e-commerce), web applications aur dashboards, React ya Next.js ke saath Django, Laravel ya Node.js par full-stack kaam, aur AI development jis mein assistants, integrations, automation aur prompt engineering shamil hain.\n\nIn mein se kaun sa aap ki zaroorat ke sab se qareeb hai?",
+        "Hamza provides technology-driven business solutions across:\n- Full-Stack Web Development\n- AI Development & Integration\n- Custom Business Software\n- Business Process Automation\n- E-Commerce Development\n- API & Database Solutions\n- Digital Product Development\n- Scalable Web Platforms\n- Technology-Driven Business Solutions\n\nWhich of these are you currently looking for?",
+        "Hamza yeh professional services provide karte hain:\n- Full-Stack Web Development\n- AI Development & Integration\n- Custom Business Software\n- Business Process Automation\n- E-Commerce Development\n- API & Database Solutions\n- Digital Product Development\n- Scalable Web Platforms\n- Technology-Driven Business Solutions\n\nAap in mein se kis service ke mutalliq baat karna chahte hain?",
       );
 
     case "ai_development":
       return pick(
         language,
-        "Yes, AI is one of his main focus areas. He builds AI assistants, integrates language models into existing products, designs automation workflows, and does prompt engineering for production use.\n\nWhat workflow or problem do you have in mind?",
-        "Ji haan, AI un ke main focus areas mein se ek hai. Wo AI assistants banate hain, existing products mein language models integrate karte hain, automation workflows design karte hain, aur production ke liye prompt engineering karte hain.\n\nAap ka koi specific workflow ya problem hai?",
+        "Yes, AI is one of Hamza's core disciplines. He specializes in AI feature integration, intelligent search, automated recommendation systems, personalized customer experiences, and connecting language models directly into production web architectures.\n\nWhat workflow or problem do you have in mind?",
+        "Ji haan, AI Hamza ke core disciplines mein se ek hai. Wo AI feature integration, intelligent search, automated recommendations, personalized customer experiences aur language models ko production web platforms mein integrate karne mein mahir hain.\n\nAap ka koi specific workflow ya problem hai?",
       );
 
     case "web_development":
       return pick(
         language,
-        "He builds business websites, portfolio sites, landing pages and e-commerce stores using React, Next.js and Tailwind CSS.\n\nWhat kind of site are you looking for?",
-        "Wo React, Next.js aur Tailwind CSS ke istemaal se business websites, portfolio sites, landing pages aur e-commerce stores banate hain.\n\nAap ko kis tarah ki site chahiye?",
+        "Hamza builds modern web applications, scalable digital products, and e-commerce platforms using React, Angular, Vue.js, and Next.js on the frontend with robust backend architectures.\n\nWhat kind of application or platform are you looking to build?",
+        "Hamza modern web applications, scalable digital products aur e-commerce platforms banate hain jin mein React, Angular, Vue.js aur Next.js frontend par aur resilient backend architectures shamil hain.\n\nAap kis tarah ka platform banana chahte hain?",
       );
 
     case "fullstack":
       return pick(
         language,
-        "He handles both sides — React, Next.js and Tailwind CSS on the frontend, Django, Laravel or Node.js on the backend, including API and database work.\n\nWhat are you building?",
-        "Wo dono taraf handle karte hain — frontend par React, Next.js aur Tailwind CSS, backend par Django, Laravel ya Node.js, aur API aur database ka kaam bhi.\n\nAap kya bana rahe hain?",
+        "Hamza handles end-to-end full-stack development — React, Angular, Vue.js on the frontend, Node.js, Python, Django, Laravel, and PHP on the backend, with SQL, MongoDB, and Supabase database architectures.\n\nWhat are you looking to build?",
+        "Hamza end-to-end full-stack development deliver karte hain — frontend par React, Angular, Vue.js, backend par Node.js, Python, Django, Laravel, PHP, aur databases mein SQL, MongoDB aur Supabase.\n\nAap kya build karna chahte hain?",
       );
 
     case "projects":
       return pick(
         language,
-        `The portfolio covers ${projectTitles}.\n\nWould you like me to walk you through any of them?`,
-        `Portfolio mein yeh projects hain: ${projectTitles}.\n\nKya aap chahte hain ke main in mein se koi detail mein bataun?`,
+        "Hamza's key projects include:\n1. E-Commerce Website with AI Feature (smart recommendations, automated search, user personalization)\n2. Camel Stationary Web App (product catalog navigation, cart management, checkout)\n3. IDS Main Portfolio Management (asset tracking, dynamic analytics, organization profile management)\n4. ABS Networking Web App (connection management, real-time data exchange, user communication).\n\nWould you like more details on any of these?",
+        "Hamza ke key projects yeh hain:\n1. E-Commerce Website with AI Feature (smart recommendations, automated search, user personalization)\n2. Camel Stationary Web App (product catalog navigation, cart management, checkout)\n3. IDS Main Portfolio Management (asset tracking, dynamic analytics, organization profile management)\n4. ABS Networking Web App (connection management, real-time data exchange, user communication).\n\nKya aap in mein se kisi project ke baare mein mazeed jaanna chahte hain?",
       );
 
     case "collaboration":

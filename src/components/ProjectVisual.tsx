@@ -12,7 +12,9 @@ function Frame({
   return (
     <div
       className={`relative w-full overflow-hidden rounded-xl border border-white/[0.08] bg-ink-900 shadow-2xl ${
-        tall ? "aspect-[16/11]" : "aspect-[16/10]"
+        tall
+          ? "aspect-auto min-h-[250px] sm:aspect-[16/11]"
+          : "aspect-auto min-h-[230px] sm:aspect-[16/10]"
       }`}
     >
       {/* Ambient Red Glow in Card Header */}
@@ -32,7 +34,7 @@ function Frame({
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />
       </div>
 
-      <div className="relative z-10 h-[calc(100%-35px)] p-3.5 sm:p-4">{children}</div>
+      <div className="relative z-10 h-auto sm:h-[calc(100%-35px)] p-3 sm:p-4">{children}</div>
     </div>
   );
 }
@@ -132,7 +134,7 @@ function Operations() {
         </div>
 
         <div className="flex-1 overflow-hidden rounded-lg border border-white/[0.07] bg-ink-800/80">
-          <div className="grid grid-cols-4 border-b border-white/[0.06] bg-ink-850 px-3 py-1.5 font-mono text-[8px] uppercase tracking-[0.16em] text-dim">
+          <div className="grid grid-cols-4 border-b border-white/[0.06] bg-ink-850 px-2 sm:px-3 py-1.5 font-mono text-[7px] min-[360px]:text-[8px] uppercase tracking-normal sm:tracking-[0.16em] text-dim">
             <span>SERVICE</span>
             <span>STATUS</span>
             <span>THROUGHPUT</span>
@@ -145,7 +147,7 @@ function Operations() {
           ].map((row) => (
             <div
               key={row.s}
-              className="grid grid-cols-4 items-center border-b border-white/[0.04] px-3 py-2 text-[10px] last:border-0"
+              className="grid grid-cols-4 items-center border-b border-white/[0.04] px-2 sm:px-3 py-1.5 sm:py-2 text-[9px] min-[360px]:text-[10px] last:border-0"
             >
               <span className="font-medium text-white">{row.s}</span>
               <span className="font-mono text-[8.5px] text-emerald-400">{row.st}</span>

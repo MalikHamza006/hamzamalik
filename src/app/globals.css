@@ -184,6 +184,8 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body {
@@ -191,7 +193,8 @@
     color: #ffffff;
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv01";
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   ::selection {
@@ -242,7 +245,13 @@
     width: 100%;
     max-width: 1280px;
     margin-inline: auto;
-    padding-inline: 1.5rem;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .shell {
+      padding-inline: 1.5rem;
+    }
   }
 
   @media (min-width: 768px) {

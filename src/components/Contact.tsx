@@ -59,7 +59,7 @@ export default function Contact() {
     }
     if (!form.email.trim()) {
       errs.email = "Email address is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
       errs.email = "Please enter a valid email address.";
     }
     if (!form.message.trim()) {
@@ -71,22 +71,32 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === "loading") return;
     if (!validate()) return;
 
     setStatus("loading");
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formspree.io/f/myezrlag", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim() || undefined,
+          projectType: form.projectType,
+          budget: form.budget,
+          timeline: form.timeline,
+          message: form.message.trim(),
+        }),
       });
 
-      const data = await res.json();
-
-      if (!res.ok || data.error) {
-        throw new Error(data.error || "Submission failed");
+      if (!res.ok) {
+        throw new Error("Submission failed");
       }
 
       setStatus("success");
@@ -99,16 +109,15 @@ export default function Contact() {
         timeline: "Flexible",
         message: "",
       });
+      setErrors({});
     } catch {
       setStatus("error");
-      setErrorMessage(
-        "Something went wrong while sending your message. Please try again or contact me directly via WhatsApp, email, or phone."
-      );
+      setErrorMessage("Something went wrong. Please try again.");
     }
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="contact" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
@@ -119,10 +128,10 @@ export default function Contact() {
       />
 
       <div className="shell">
-        <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-gradient-to-b from-ink-800 via-ink-850 to-ink-900 p-6 sm:p-10 lg:p-14 shadow-2xl">
+        <div className="relative overflow-hidden rounded-2xl border border-white/[0.1] bg-gradient-to-b from-ink-800 via-ink-850 to-ink-900 p-5 sm:p-10 lg:p-14 shadow-2xl">
           <CornerBrackets />
 
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-14">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
             {/* Left Column: Contact Introduction & Details */}
             <div className="lg:col-span-5">
               <Reveal>
@@ -145,14 +154,14 @@ export default function Contact() {
 
                 {/* Direct Contact Cards */}
                 <div className="mt-8 space-y-3">
-                  <div className="flex items-center justify-between rounded-xl border border-white/[0.07] bg-ink-850/80 px-4 py-3">
-                    <div className="flex flex-col">
+                  <div className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-ink-850/80 px-3.5 py-3 sm:px-4">
+                    <div className="flex min-w-0 flex-col">
                       <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-dim">
                         Direct Phone
                       </span>
                       <a
                         href={profile.phoneHref}
-                        className="text-[13.5px] font-medium text-white hover:text-crimson-400 transition-colors"
+                        className="truncate text-[13px] font-medium text-white transition-colors hover:text-crimson-400 sm:text-[13.5px]"
                       >
                         {profile.phone}
                       </a>
@@ -160,14 +169,14 @@ export default function Contact() {
                     <CopyButton text={profile.phone} label="phone" />
                   </div>
 
-                  <div className="flex items-center justify-between rounded-xl border border-white/[0.07] bg-ink-850/80 px-4 py-3">
-                    <div className="flex flex-col">
+                  <div className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-ink-850/80 px-3.5 py-3 sm:px-4">
+                    <div className="flex min-w-0 flex-col">
                       <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-dim">
                         Primary Email
                       </span>
                       <a
                         href={profile.emailHref}
-                        className="text-[13.5px] font-medium text-white hover:text-crimson-400 transition-colors"
+                        className="truncate text-[13px] font-medium text-white transition-colors hover:text-crimson-400 sm:text-[13.5px]"
                       >
                         {profile.email}
                       </a>
@@ -180,17 +189,17 @@ export default function Contact() {
                       href={profile.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-between rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-4 py-3 text-emerald-400 hover:border-emerald-600/60 hover:text-white transition-all"
+                      className="flex items-center justify-between gap-3 rounded-xl border border-emerald-900/40 bg-emerald-950/20 px-3.5 py-3 text-emerald-400 transition-all hover:border-emerald-600/60 hover:text-white sm:px-4"
                     >
-                      <div className="flex flex-col">
+                      <div className="flex min-w-0 flex-col">
                         <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-emerald-500">
                           Instant Messaging
                         </span>
-                        <span className="text-[13.5px] font-medium">
+                        <span className="truncate text-[13px] font-medium sm:text-[13.5px]">
                           Connect on WhatsApp →
                         </span>
                       </div>
-                      <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-emerald-400">
+                      <span className="shrink-0 font-mono text-[9px] uppercase tracking-[0.14em] text-emerald-400">
                         Online
                       </span>
                     </a>
@@ -206,9 +215,13 @@ export default function Contact() {
             {/* Right Column: Native Dark Contact Form */}
             <div className="lg:col-span-7">
               <Reveal delay={100}>
-                <div className="rounded-xl border border-white/[0.08] bg-ink-900/90 p-6 sm:p-8">
+                <div className="rounded-xl border border-white/[0.08] bg-ink-900/90 p-4 sm:p-8">
                   {status === "success" ? (
-                    <div className="py-12 text-center">
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className="py-12 text-center"
+                    >
                       <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-950/40 text-emerald-400">
                         <svg
                           viewBox="0 0 24 24"
@@ -216,12 +229,13 @@ export default function Contact() {
                           stroke="currentColor"
                           strokeWidth="2"
                           className="h-6 w-6"
+                          aria-hidden="true"
                         >
                           <path d="M20 6 9 17l-5-5" />
                         </svg>
                       </div>
-                      <h3 className="mt-4 text-[22px] font-semibold text-white">
-                        Message received.
+                      <h3 className="mt-4 text-[20px] font-semibold text-white sm:text-[22px]">
+                        Thanks! Your message has been sent successfully.
                       </h3>
                       <p className="mx-auto mt-2 max-w-[42ch] text-[14px] leading-relaxed text-mute">
                         Thanks for reaching out. I&apos;ll review your project details and get back to you with architectural considerations.
@@ -235,10 +249,20 @@ export default function Contact() {
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                    <form
+                      action="https://formspree.io/f/myezrlag"
+                      method="POST"
+                      onSubmit={handleSubmit}
+                      noValidate
+                      className="space-y-4"
+                    >
                       {status === "error" && (
-                        <div className="rounded-lg border border-crimson-800/60 bg-crimson-950/40 p-4 text-[13px] text-crimson-200">
-                          {errorMessage}
+                        <div
+                          role="alert"
+                          aria-live="assertive"
+                          className="rounded-lg border border-crimson-800/60 bg-crimson-950/40 p-4 text-[13px] text-crimson-200"
+                        >
+                          {errorMessage || "Something went wrong. Please try again."}
                         </div>
                       )}
 
@@ -253,7 +277,13 @@ export default function Contact() {
                           </label>
                           <input
                             id="name"
+                            name="name"
                             type="text"
+                            required
+                            autoComplete="name"
+                            aria-required="true"
+                            aria-invalid={Boolean(errors.name)}
+                            aria-describedby={errors.name ? "name-error" : undefined}
                             value={form.name}
                             onChange={(e) => {
                               setForm({ ...form, name: e.target.value });
@@ -267,7 +297,7 @@ export default function Contact() {
                             }`}
                           />
                           {errors.name && (
-                            <p className="mt-1 text-[11px] text-crimson-400">
+                            <p id="name-error" className="mt-1 text-[11px] text-crimson-400">
                               {errors.name}
                             </p>
                           )}
@@ -282,7 +312,13 @@ export default function Contact() {
                           </label>
                           <input
                             id="email"
+                            name="email"
                             type="email"
+                            required
+                            autoComplete="email"
+                            aria-required="true"
+                            aria-invalid={Boolean(errors.email)}
+                            aria-describedby={errors.email ? "email-error" : undefined}
                             value={form.email}
                             onChange={(e) => {
                               setForm({ ...form, email: e.target.value });
@@ -296,7 +332,7 @@ export default function Contact() {
                             }`}
                           />
                           {errors.email && (
-                            <p className="mt-1 text-[11px] text-crimson-400">
+                            <p id="email-error" className="mt-1 text-[11px] text-crimson-400">
                               {errors.email}
                             </p>
                           )}
@@ -314,7 +350,9 @@ export default function Contact() {
                           </label>
                           <input
                             id="phone"
+                            name="phone"
                             type="tel"
+                            autoComplete="tel"
                             value={form.phone}
                             onChange={(e) => setForm({ ...form, phone: e.target.value })}
                             placeholder="+1 (555) 000-0000"
@@ -331,6 +369,7 @@ export default function Contact() {
                           </label>
                           <select
                             id="projectType"
+                            name="projectType"
                             value={form.projectType}
                             onChange={(e) =>
                               setForm({ ...form, projectType: e.target.value })
@@ -362,6 +401,7 @@ export default function Contact() {
                           </label>
                           <select
                             id="budget"
+                            name="budget"
                             value={form.budget}
                             onChange={(e) => setForm({ ...form, budget: e.target.value })}
                             className="mt-1.5 w-full rounded-lg border border-white/[0.08] bg-ink-850 px-3.5 py-2.5 text-[14px] text-white transition-all focus:border-crimson-600 focus:outline-none focus:ring-1 focus:ring-crimson-600"
@@ -383,6 +423,7 @@ export default function Contact() {
                           </label>
                           <select
                             id="timeline"
+                            name="timeline"
                             value={form.timeline}
                             onChange={(e) =>
                               setForm({ ...form, timeline: e.target.value })
@@ -406,7 +447,12 @@ export default function Contact() {
                         </label>
                         <textarea
                           id="message"
+                          name="message"
                           rows={4}
+                          required
+                          aria-required="true"
+                          aria-invalid={Boolean(errors.message)}
+                          aria-describedby={errors.message ? "message-error" : undefined}
                           value={form.message}
                           onChange={(e) => {
                             setForm({ ...form, message: e.target.value });
@@ -420,7 +466,7 @@ export default function Contact() {
                           }`}
                         />
                         {errors.message && (
-                          <p className="mt-1 text-[11px] text-crimson-400">
+                          <p id="message-error" className="mt-1 text-[11px] text-crimson-400">
                             {errors.message}
                           </p>
                         )}
@@ -431,11 +477,14 @@ export default function Contact() {
                         <button
                           type="submit"
                           disabled={status === "loading"}
-                          className="btn btn-primary w-full !min-h-[48px] font-semibold tracking-wider uppercase text-[12px]"
+                          className="btn btn-primary w-full !min-h-[48px] font-semibold tracking-wider uppercase text-[12px] disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                           {status === "loading" ? (
                             <span className="flex items-center gap-2">
-                              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-white" />
+                              <span
+                                className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-white"
+                                aria-hidden="true"
+                              />
                               Sending Message...
                             </span>
                           ) : (

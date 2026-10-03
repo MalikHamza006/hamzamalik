@@ -34,16 +34,16 @@ export default function TechStrip() {
             {stackItems.map((tech) => (
               <div
                 key={tech.id}
-                className="group flex items-center gap-3 rounded-xl border border-white/[0.08] bg-ink-850/80 p-3.5 transition-all duration-300 hover:border-crimson-800/60 hover:bg-ink-800"
+                className="group flex items-center gap-2.5 sm:gap-3 rounded-xl border border-white/[0.08] bg-ink-850/80 p-2.5 sm:p-3.5 transition-all duration-300 hover:border-crimson-800/60 hover:bg-ink-800"
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-ink-900 text-dim transition-colors group-hover:border-crimson-700/60 group-hover:text-white">
                   <TechIcon id={tech.id} className="h-4 w-4" />
                 </span>
                 <div className="min-w-0">
-                  <div className="truncate text-[13px] font-semibold text-white">
+                  <div className="truncate text-[12.5px] sm:text-[13px] font-semibold text-white">
                     {tech.name}
                   </div>
-                  <div className="truncate font-mono text-[8.5px] uppercase tracking-[0.14em] text-dim">
+                  <div className="truncate font-mono text-[8px] sm:text-[8.5px] uppercase tracking-[0.08em] sm:tracking-[0.14em] text-dim">
                     {tech.category}
                   </div>
                 </div>

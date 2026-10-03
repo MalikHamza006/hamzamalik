@@ -126,7 +126,7 @@ export default function Navigation() {
       {/* Mobile Drawer */}
       <div
         id="mobile-menu"
-        className={`fixed inset-x-0 top-[72px] z-40 origin-top border-b border-white/[0.08] bg-ink-950/98 backdrop-blur-2xl transition-[opacity,transform,visibility] duration-400 lg:hidden ${
+        className={`fixed inset-x-0 top-[72px] z-40 max-h-[calc(100dvh-72px)] origin-top overflow-y-auto overscroll-contain border-b border-white/[0.08] bg-ink-950/98 backdrop-blur-2xl transition-[opacity,transform,visibility] duration-400 lg:hidden ${
           open
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-3 opacity-0"

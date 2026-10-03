@@ -8,7 +8,7 @@ export default function Projects() {
   const secondary = projects.slice(1);
 
   return (
-    <section id="projects" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="projects" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
@@ -46,7 +46,7 @@ export default function Projects() {
         {/* FEATURED PROJECT: Large Horizontal Architectural Block */}
         {featured && (
           <Reveal delay={90} className="mt-14">
-            <article className="card card-hover card-leak group relative overflow-hidden p-6 sm:p-8 lg:p-10">
+            <article className="card card-hover card-leak group relative overflow-hidden p-4 sm:p-8 lg:p-10">
               <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
                 {/* Left Visual Preview */}
                 <div className="lg:col-span-7">
@@ -107,7 +107,7 @@ export default function Projects() {
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {secondary.map((project, idx) => (
             <Reveal key={project.title} delay={(idx % 3) * 80}>
-              <article className="card card-hover card-leak group relative flex h-full flex-col justify-between overflow-hidden p-6 sm:p-7">
+              <article className="card card-hover card-leak group relative flex h-full flex-col justify-between overflow-hidden p-4 sm:p-7">
                 <div>
                   <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.18em]">
                     <span className="text-crimson-500">{project.category}</span>

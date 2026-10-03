@@ -183,7 +183,7 @@ export default function HMAssistant() {
           aria-expanded={false}
           aria-haspopup="dialog"
           tabIndex={launcherHidden ? -1 : 0}
-          className={`group fixed bottom-5 right-5 z-[65] flex items-center gap-2.5 rounded-full border border-white/[0.1] bg-ink-850/90 py-2.5 pl-3 pr-4 backdrop-blur-xl transition-[opacity,transform,border-color,box-shadow] duration-500 hover:-translate-y-0.5 hover:border-crimson-700/80 hover:shadow-[0_16px_42px_-14px_rgba(185,28,28,0.9)] focus-visible:border-crimson-600 ${
+          className={`group fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-[65] flex items-center gap-2.5 rounded-full border border-white/[0.1] bg-ink-850/90 p-2 sm:py-2.5 sm:pl-3 sm:pr-4 backdrop-blur-xl transition-[opacity,transform,border-color,box-shadow] duration-500 hover:-translate-y-0.5 hover:border-crimson-700/80 hover:shadow-[0_16px_42px_-14px_rgba(185,28,28,0.9)] focus-visible:border-crimson-600 ${
             launcherHidden
               ? "pointer-events-none translate-y-3 opacity-0"
               : "opacity-100"
@@ -200,7 +200,7 @@ export default function HMAssistant() {
               <circle cx="12" cy="12" r="8.2" stroke="currentColor" strokeWidth="1.1" opacity="0.45" />
             </svg>
           </span>
-          <span className="relative flex flex-col items-start leading-none">
+          <span className="relative hidden sm:flex flex-col items-start leading-none">
             <span className="text-[13px] font-semibold tracking-[0.01em] text-white">
               {hamzaAIConfig.name}
             </span>

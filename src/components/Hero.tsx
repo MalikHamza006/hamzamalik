@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[85vh] w-full overflow-hidden bg-[#070707] pt-[72px] lg:h-[88vh] lg:min-h-[780px] lg:max-h-[920px] lg:pt-0"
+      className="relative w-full overflow-hidden bg-[#070707] pt-[72px] lg:h-[88vh] lg:min-h-[780px] lg:max-h-[920px] lg:pt-0"
     >
       {/* ========================================================================= */}
       {/* 1. RIGHT SIDE: Architectural Red Environment & Large Hamza Portrait       */}
@@ -77,7 +77,7 @@ export default function Hero() {
       {/* 2. LEFT SIDE: Dark Editorial Panel with Geometric Clip-Path Cut           */}
       {/* ========================================================================= */}
       <div
-        className="relative z-10 flex h-full w-full flex-col justify-center bg-[#090909] lg:w-[58%] lg:bg-gradient-to-r lg:from-[#080808] lg:via-[#090909] lg:to-[#0B0B0B] lg:[clip-path:polygon(0_0,100%_0,76%_100%,0_100%)]"
+        className="relative z-10 flex w-full flex-col justify-center overflow-hidden bg-[#090909] lg:h-full lg:w-[58%] lg:bg-gradient-to-r lg:from-[#080808] lg:via-[#090909] lg:to-[#0B0B0B] lg:[clip-path:polygon(0_0,100%_0,76%_100%,0_100%)]"
       >
         {/* Subtle Ambient Radial Lighting within Left Panel */}
         <div
@@ -86,18 +86,18 @@ export default function Hero() {
         />
 
         {/* Content Container (Constrained so it never touches the diagonal cut) */}
-        <div className="w-full px-6 py-10 sm:px-10 lg:py-14 lg:pl-12 lg:pr-14 xl:pl-16 xl:pr-18">
-          <div className="max-w-[500px] xl:max-w-[540px]">
+        <div className="w-full px-5 py-8 sm:px-10 sm:py-10 lg:py-14 lg:pl-10 lg:pr-14 xl:pl-16 xl:pr-18">
+          <div className="max-w-[460px] xl:max-w-[540px]">
             {/* Eyebrow */}
             <div className="flex items-center gap-2.5">
               <span className="h-2 w-2 animate-dot rounded-full bg-crimson-600 shadow-[0_0_8px_1px_rgba(220,38,38,0.8)]" />
-              <span className="font-mono text-[10.5px] uppercase tracking-[0.24em] text-mute sm:text-[11.5px]">
+              <span className="font-mono text-[10px] uppercase tracking-[0.24em] text-mute sm:text-[11.5px]">
                 HAMZA MALIK // SOFTWARE ENGINEER
               </span>
             </div>
 
             {/* Main Heading - Balanced Scale */}
-            <h1 className="mt-5 text-[clamp(2rem,3.6vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white">
+            <h1 className="mt-4 sm:mt-5 text-[clamp(1.55rem,5.2vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white">
               Engineering scalable
               <br />
               digital products &
@@ -106,14 +106,14 @@ export default function Hero() {
             </h1>
 
             {/* Description */}
-            <p className="mt-5 max-w-[44ch] text-[14.5px] leading-[1.75] text-mute sm:text-[15px]">
+            <p className="mt-4 sm:mt-5 max-w-[44ch] text-[14px] leading-[1.7] text-mute sm:text-[15px]">
               Building dependable full-stack web applications, resilient backend
               architectures, and practical AI systems using React, Next.js,
               Django, Laravel, Node.js, and TypeScript.
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 sm:mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#projects"
                 className="btn btn-primary group w-full sm:w-auto !min-h-[46px] !px-6 font-semibold tracking-wider text-[12px] uppercase"
@@ -131,7 +131,7 @@ export default function Hero() {
             </div>
 
             {/* Disciplines & Fast Contact Channels */}
-            <div className="mt-8 border-t border-white/[0.08] pt-5">
+            <div className="mt-7 sm:mt-8 border-t border-white/[0.08] pt-4 sm:pt-5">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-[0.16em] text-dim">
                 <span className="text-white">CORE:</span>
                 {heroRoles.map((role, idx) => (
@@ -142,10 +142,10 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] text-dim">
+              <div className="mt-3 sm:mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[10.5px] sm:text-[11px] text-dim">
                 <a
                   href={profile.emailHref}
-                  className="transition-colors hover:text-white"
+                  className="break-all transition-colors hover:text-white"
                 >
                   <span className="mr-1.5 text-crimson-600">01</span>
                   {profile.email}
@@ -191,7 +191,6 @@ export default function Hero() {
           </defs>
 
           {/* Strong Diagonal Line running from (58% of width, 0) to (44% of width, 100%) */}
-          {/* Note: since SVG viewBox is 0 0 100 100, (58, 0) to (44.08, 100) exactly matches the 58% -> 44% polygon */}
           <line
             x1="58"
             y1="0"
@@ -220,7 +219,7 @@ export default function Hero() {
       {/* ========================================================================= */}
       {/* 4. MOBILE / TABLET ADAPTATION (< 1024px)                                  */}
       {/* ========================================================================= */}
-      <div className="relative z-10 block px-6 pb-12 sm:px-10 lg:hidden">
+      <div className="relative z-10 block px-5 pb-8 sm:px-10 sm:pb-12 lg:hidden">
         {/* Mobile Angled Crimson Divider Line */}
         <div
           aria-hidden="true"
@@ -232,7 +231,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Portrait Container - Balanced Scale */}
-        <div className="relative mx-auto aspect-[3.5/4] w-full max-w-[340px] overflow-hidden rounded-xl bg-[#090909]">
+        <div className="relative mx-auto aspect-[3.2/3.8] w-full max-w-[320px] overflow-hidden rounded-xl bg-[#090909]">
           {/* Crimson Ambient Glow */}
           <div
             aria-hidden="true"
@@ -247,14 +246,14 @@ export default function Hero() {
             src="/hamza2.png"
             alt={`${profile.name} — Software Engineer`}
             fill
-            sizes="(max-width: 768px) 100vw, 340px"
+            sizes="(max-width: 768px) 100vw, 320px"
             className="object-contain object-bottom filter brightness-[0.98] contrast-[1.02]"
           />
 
           {/* Bottom Fade */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#070707] via-[#070707]/60 to-transparent"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#070707] via-[#070707]/60 to-transparent"
           />
         </div>
       </div>

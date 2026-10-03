@@ -24,7 +24,7 @@ export default function Page() {
       <Background />
       <Navigation />
 
-      <main>
+      <main className="w-full min-w-0 overflow-x-clip">
         <Hero />
         <Projects />
         <Skills />

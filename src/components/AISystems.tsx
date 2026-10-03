@@ -24,7 +24,7 @@ const aiCapabilities = [
 
 export default function AISystems() {
   return (
-    <section id="ai-systems" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="ai-systems" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
@@ -55,10 +55,10 @@ export default function AISystems() {
 
         {/* System Pipeline Architectural Visual */}
         <Reveal delay={90} className="mt-14">
-          <div className="card relative overflow-hidden p-6 sm:p-8 lg:p-10">
+          <div className="card relative overflow-hidden p-4 sm:p-8 lg:p-10">
             <CornerBrackets />
 
-            <div className="flex items-center justify-between border-b border-white/[0.06] pb-4">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-white/[0.06] pb-4">
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-mute">
                 PIPELINE ARCHITECTURE // RUNTIME
               </span>
@@ -138,7 +138,7 @@ export default function AISystems() {
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
           {aiCapabilities.map((card, idx) => (
             <Reveal key={card.num} delay={idx * 80}>
-              <article className="card card-hover card-leak flex h-full flex-col justify-between overflow-hidden p-6 sm:p-7">
+              <article className="card card-hover card-leak flex h-full flex-col justify-between overflow-hidden p-4 sm:p-7">
                 <div>
                   <div className="flex items-center justify-between font-mono text-[10px] text-crimson-500">
                     <span>{card.num}</span>

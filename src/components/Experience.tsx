@@ -48,7 +48,7 @@ const timelineItems = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="experience" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
@@ -77,26 +77,26 @@ export default function Experience() {
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           {milestones.map((item, idx) => (
             <Reveal key={item.number} delay={idx * 60}>
-              <div className="card p-4 sm:p-5">
-                <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.18em] text-dim">
+              <div className="card p-3.5 sm:p-5">
+                <div className="flex items-center justify-between gap-1.5 font-mono text-[9px] uppercase tracking-[0.12em] text-dim sm:tracking-[0.18em]">
                   <span>{item.number}</span>
-                  <span className="text-crimson-500">{item.label}</span>
+                  <span className="truncate text-right text-crimson-500">{item.label}</span>
                 </div>
-                <div className="mt-2 font-mono text-[26px] font-bold text-white sm:text-[32px]">
+                <div className="mt-2 font-mono text-[18px] min-[380px]:text-[21px] sm:text-[32px] font-bold tracking-tight text-white sm:tracking-normal">
                   {item.value}
                 </div>
-                <div className="mt-1 text-[12px] text-mute">{item.description}</div>
+                <div className="mt-1 text-[11px] sm:text-[12px] text-mute">{item.description}</div>
               </div>
             </Reveal>
           ))}
         </div>
 
         {/* Architectural Timeline with Thin Vertical Crimson Line */}
-        <div className="relative mt-16 pl-6 sm:pl-10">
+        <div className="relative mt-16 pl-7 sm:pl-10">
           {/* Thin Vertical Crimson Architectural Line */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-4 left-2.5 top-2 w-[1.5px] bg-gradient-to-b from-crimson-600 via-crimson-800 to-transparent sm:left-4"
+            className="pointer-events-none absolute bottom-4 left-3 top-2 w-[1.5px] bg-gradient-to-b from-crimson-600 via-crimson-800 to-transparent sm:left-4"
           />
 
           <div className="space-y-12">
@@ -104,11 +104,11 @@ export default function Experience() {
               <Reveal key={item.number} delay={index * 100}>
                 <div className="relative">
                   {/* Timeline Node Dot */}
-                  <span className="absolute -left-[27px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-crimson-600 bg-ink-950 sm:-left-[39px]">
+                  <span className="absolute -left-[24px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-crimson-600 bg-ink-950 sm:-left-[32px]">
                     <span className="h-1.5 w-1.5 rounded-full bg-crimson-500 shadow-[0_0_8px_1px_rgba(220,38,38,0.8)]" />
                   </span>
 
-                  <article className="card card-hover card-leak overflow-hidden p-6 sm:p-8">
+                  <article className="card card-hover card-leak overflow-hidden p-4 sm:p-8">
                     <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-white/[0.06] pb-4">
                       <div>
                         <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-crimson-500">

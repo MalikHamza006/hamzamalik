@@ -59,7 +59,7 @@ const expertiseModules = [
 
 export default function Skills() {
   return (
-    <section id="expertise" className="relative scroll-mt-24 py-24 lg:py-32">
+    <section id="expertise" className="relative scroll-mt-24 overflow-hidden py-24 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
